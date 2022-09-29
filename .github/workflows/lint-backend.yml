@@ -1,0 +1,25 @@
+name: Lint backend
+
+on: [push]
+
+jobs:
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
+        with:
+          options: "--check --diff --line-length 80"
+          src: "./backend/"
+
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install flake8
+        run: pip install flake8
+      - name: flake8
+        run: flake8 ./backend/
