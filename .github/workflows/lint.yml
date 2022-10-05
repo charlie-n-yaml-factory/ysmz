@@ -1,4 +1,4 @@
-name: Lint backend
+name: Lint
 
 on: [push]
 
@@ -21,5 +21,22 @@ jobs:
           python-version: "3.10"
       - name: Install flake8
         run: pip install flake8
-      - name: flake8
+      - name: Run flake8
         run: flake8 ./backend/
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        working-directory: ./frontend/
+        run: |
+          npm install --only=dev
+      - name: Run ESLint
+        working-directory: ./frontend/
+        run: npx eslint .
+          --config ./.eslintrc.js
+          --ext .js,.jsx,.ts,.tsx
