@@ -3,28 +3,24 @@ name: Lint
 on: [push]
 
 jobs:
-  black:
+  eslint-backend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: psf/black@stable
+      - uses: actions/setup-node@v3
         with:
-          options: "--check --diff --line-length 79"
-          src: "./backend/"
+          node-version: 18
+      - name: Install dependencies
+        working-directory: ./backend/
+        run: |
+          npm install --only=dev
+      - name: Run ESLint
+        working-directory: ./backend/
+        run: npx eslint .
+          --config ./.eslintrc.js
+          --ext .js,.jsx,.ts,.tsx
 
-  flake8:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-      - name: Install flake8
-        run: pip install flake8
-      - name: Run flake8
-        run: flake8 ./backend/
-
-  eslint:
+  eslint-frontend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
