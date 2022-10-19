@@ -4,55 +4,57 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "airbnb",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:jsx-a11y/recommended",
-    "plugin:react/recommended",
-    "standard-with-typescript",
-    "prettier",
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:jsx-a11y/recommended',
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'prettier',
   ],
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: ['.eslintrc.js'],
   overrides: [],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: "./tsconfig.json",
+    project: './tsconfig.json',
     tsconfigRootDir: __dirname,
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["react", "@typescript-eslint", "prettier"],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     semi: 2,
-    "prettier/prettier": [
-      "warn",
+    'prettier/prettier': [
+      'warn',
       {
-        singleQuote: true,
         semi: false,
+        singleQuote: true,
+        jsxSingleQuote: true,
       },
     ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
+    'import/extensions': [
+      'error',
+      'ignorePackages',
       {
-        js: "never",
-        jsx: "never",
-        ts: "never",
-        tsx: "never",
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
-    "react/jsx-filename-extension": [
+    'react/jsx-filename-extension': [
       2,
-      { extensions: [".js", ".jsx", ".ts", ".tsx"] },
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
-    "@typescript-eslint/explicit-function-return-type": "off",
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'no-console': 'off',
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
-};
+}
