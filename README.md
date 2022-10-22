@@ -1,2 +1,2 @@
-# nanomeet
-A service that innovates every single meeting in the world
+# ysmj
+A service that innovates how people find restaurants
