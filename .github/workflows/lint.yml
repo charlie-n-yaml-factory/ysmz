@@ -11,11 +11,11 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        working-directory: ./backend/
+        working-directory: ./ysmz-backend/
         run: |
           npm install --only=dev
       - name: Run ESLint
-        working-directory: ./backend/
+        working-directory: ./ysmz-backend/
         run: npx eslint .
           --config ./.eslintrc.js
           --ext .js,.jsx,.ts,.tsx
@@ -28,11 +28,11 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        working-directory: ./frontend/
+        working-directory: ./ysmz-frontend/
         run: |
           npm install --only=dev
       - name: Run ESLint
-        working-directory: ./frontend/
+        working-directory: ./ysmz-frontend/
         run: npx eslint .
           --config ./.eslintrc.js
           --ext .js,.jsx,.ts,.tsx
