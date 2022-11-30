@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		722BE3092929BB1800E2D22F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722BE3082929BB1800E2D22F /* MapView.swift */; };
+		728B1FE9293347000037823D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728B1FE8293347000037823D /* LocationManager.swift */; };
 		FEC46526290CE13B00077A4E /* ysmz_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC46525290CE13B00077A4E /* ysmz_iosApp.swift */; };
-		FEC46528290CE13B00077A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC46527290CE13B00077A4E /* ContentView.swift */; };
 		FEC4652A290CE13C00077A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC46529290CE13C00077A4E /* Assets.xcassets */; };
 		FEC4652D290CE13C00077A4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC4652C290CE13C00077A4E /* Preview Assets.xcassets */; };
 		FEC46537290CE13C00077A4E /* ysmz_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC46536290CE13C00077A4E /* ysmz_iosTests.swift */; };
@@ -36,9 +36,10 @@
 
 /* Begin PBXFileReference section */
 		722BE3082929BB1800E2D22F /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		728B1FE8293347000037823D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		728B1FEC29336BE90037823D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC46522290CE13B00077A4E /* ysmz-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ysmz-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC46525290CE13B00077A4E /* ysmz_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ysmz_iosApp.swift; sourceTree = "<group>"; };
-		FEC46527290CE13B00077A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FEC46529290CE13C00077A4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC4652C290CE13C00077A4E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FEC46532290CE13C00077A4E /* ysmz-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ysmz-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,11 +97,12 @@
 		FEC46524290CE13B00077A4E /* ysmz-ios */ = {
 			isa = PBXGroup;
 			children = (
+				728B1FEC29336BE90037823D /* Info.plist */,
 				FEC46525290CE13B00077A4E /* ysmz_iosApp.swift */,
-				FEC46527290CE13B00077A4E /* ContentView.swift */,
 				722BE3082929BB1800E2D22F /* MapView.swift */,
 				FEC46529290CE13C00077A4E /* Assets.xcassets */,
 				FEC4652B290CE13C00077A4E /* Preview Content */,
+				728B1FE8293347000037823D /* LocationManager.swift */,
 			);
 			path = "ysmz-ios";
 			sourceTree = "<group>";
@@ -260,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC46528290CE13B00077A4E /* ContentView.swift in Sources */,
 				722BE3092929BB1800E2D22F /* MapView.swift in Sources */,
 				FEC46526290CE13B00077A4E /* ysmz_iosApp.swift in Sources */,
+				728B1FE9293347000037823D /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +426,8 @@
 				DEVELOPMENT_TEAM = V343T3JQF8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ysmz-ios/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -453,6 +457,8 @@
 				DEVELOPMENT_TEAM = V343T3JQF8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ysmz-ios/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

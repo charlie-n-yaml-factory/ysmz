@@ -7,16 +7,27 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
 struct MapView: UIViewRepresentable {
+    @StateObject var locationManager = LocationManager()
+
     func makeUIView(context: Context) -> MKMapView {
         MKMapView(frame: .zero)
     }
-    
+
+    var userCoordinate: (Double, Double) {
+        return (
+            // The default location is Yeoksam station.
+            locationManager.lastLocation?.coordinate.latitude ?? 37.500723072486,
+            locationManager.lastLocation?.coordinate.longitude ?? 127.03680544372
+        )
+    }
+
     func updateUIView(_ view: MKMapView, context: Context) {
         let coordinate = CLLocationCoordinate2D(
-            latitude: 34.011286, longitude: -116.166868)
-        let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+            latitude: userCoordinate.0, longitude: userCoordinate.1)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         view.setRegion(region, animated: true)
     }
