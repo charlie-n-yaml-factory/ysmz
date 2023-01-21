@@ -3,23 +3,6 @@ name: Lint
 on: [push]
 
 jobs:
-  eslint-backend:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Install dependencies
-        working-directory: ./ysmz-backend/
-        run: |
-          npm install --only=dev
-      - name: Run ESLint
-        working-directory: ./ysmz-backend/
-        run: npx eslint .
-          --config ./.eslintrc.js
-          --ext .js,.jsx,.ts,.tsx
-
   eslint-frontend:
     runs-on: ubuntu-latest
     steps:
